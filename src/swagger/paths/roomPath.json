@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Rooms"],
+    "summary": "Create a new room",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/roomSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Room created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/roomSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Rooms"],
+    "summary": "Get all rooms",
+    "responses": {
+      "200": {
+        "description": "List of rooms",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/roomSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

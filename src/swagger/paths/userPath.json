@@ -1,0 +1,47 @@
+{
+  "post": {
+    "tags": ["Users"],
+    "summary": "Create a new user",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/userSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "User created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/userSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Users"],
+    "summary": "Get all users",
+    "responses": {
+      "200": {
+        "description": "List of users",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./components/schemas/userSchema.json"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

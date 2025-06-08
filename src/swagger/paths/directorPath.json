@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Directors"],
+    "summary": "Crear un nuevo director",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/directorSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Director creado exitosamente",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/directorSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Directors"],
+    "summary": "Obtener todos los directores",
+    "responses": {
+      "200": {
+        "description": "Lista de directores",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/directorSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

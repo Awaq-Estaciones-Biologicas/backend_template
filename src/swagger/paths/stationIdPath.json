@@ -1,0 +1,104 @@
+{
+  "get": {
+    "tags": ["Stations"],
+    "summary": "Get station by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the station to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Station retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/stationSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Station not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Stations"],
+    "summary": "Update station by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the station to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/stationSchema.json"
+          },
+          "example": {
+            "state": true,
+            "director_id": 2,
+            "country_id": 3,
+            "location_id": 5
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Station updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/stationSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Station not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Stations"],
+    "summary": "Delete station by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the station to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Station deleted successfully"
+      },
+      "404": {
+        "description": "Station not found"
+      }
+    }
+  }
+}

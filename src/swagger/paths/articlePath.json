@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Articles"],
+    "summary": "Create a new article",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/articleSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Article created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/articleSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Articles"],
+    "summary": "Get all articles",
+    "responses": {
+      "200": {
+        "description": "List of articles",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/articleSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

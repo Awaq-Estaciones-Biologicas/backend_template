@@ -1,0 +1,249 @@
+{
+  "type": "object",
+  "properties": {
+    "title1_en": {
+      "type": "string",
+      "description": "Main title of the article in English",
+      "example": "The Future of Technology"
+    },
+    "title1_es": {
+      "type": "string",
+      "description": "Main title of the article in Spanish",
+      "example": "El Futuro de la Tecnología"
+    },
+    "title2_en": {
+      "type": "string",
+      "description": "Subtitle of the article in English",
+      "example": "Exploring the advancements in AI"
+    },
+    "title2_es": {
+      "type": "string",
+      "description": "Subtitle of the article in Spanish",
+      "example": "Explorando los avances en IA"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Technology", "Lifestyle", "Education", "Business", "Travel"],
+      "description": "Category of the article",
+      "example": "Technology"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date of the article",
+      "example": "2024-12-01"
+    },
+    "shortdescription_en": {
+      "type": "object",
+      "description": "Short description of the article in English",
+      "example": {
+        "summary": "An overview of upcoming tech trends.",
+        "keywords": ["future", "technology", "trends"]
+      }
+    },
+    "shortdescription_es": {
+      "type": "object",
+      "description": "Short description of the article in Spanish",
+      "example": {
+        "summary": "Un resumen de las próximas tendencias tecnológicas.",
+        "keywords": ["futuro", "tecnología", "tendencias"]
+      }
+    },
+    "bannerUrl": {
+      "type": "string",
+      "description": "URL of the banner image",
+      "example": "https://example.com/banner.jpg"
+    },
+    "bannerAlt_en": {
+      "type": "string",
+      "description": "Alt text for the banner in English",
+      "example": "Technology banner"
+    },
+    "bannerAlt_es": {
+      "type": "string",
+      "description": "Alt text for the banner in Spanish",
+      "example": "Banner de tecnología"
+    },
+    "bannerdescription_en": {
+      "type": "string",
+      "description": "Description of the banner in English",
+      "example": "A banner representing technology advancements."
+    },
+    "bannerdescription_es": {
+      "type": "string",
+      "description": "Description of the banner in Spanish",
+      "example": "Un banner que representa avances tecnológicos."
+    },
+    "titledescription_en": {
+      "type": "string",
+      "description": "Description of the title in English",
+      "example": "An in-depth exploration of technology's future."
+    },
+    "titledescription_es": {
+      "type": "string",
+      "description": "Description of the title in Spanish",
+      "example": "Una exploración profunda del futuro de la tecnología."
+    },
+    "articlesocialmedia": {
+      "type": "object",
+      "description": "Social media details associated with the article",
+      "example": {
+        "facebook": "https://facebook.com/article",
+        "twitter": "https://twitter.com/article"
+      }
+    },
+    "subtitle_en": {
+      "type": "object",
+      "description": "Subtitle in English",
+      "example": {
+        "content": "A concise summary or additional information about the article in English."
+      }
+    },
+    "subtitle_es": {
+      "type": "object",
+      "description": "Subtitle in Spanish",
+      "example": {
+        "content": "Un resumen conciso o información adicional sobre el artículo en español."
+      }
+    },
+    "media": {
+      "type": "object",
+      "description": "Media files associated with the article",
+      "example": {
+        "images": [
+          "https://example.com/image1.jpg",
+          "https://example.com/image2.jpg"
+        ],
+        "videos": [
+          "https://example.com/video1.mp4",
+          "https://example.com/video2.mp4"
+        ]
+      }
+    },
+    "authorId": {
+      "type": "integer",
+      "description": "ID of the author associated with the article",
+      "example": 1
+    },
+    "audiotitle_en": {
+      "type": "object",
+      "description": "Audio title in English",
+      "example": {
+        "title": "Introduction to Technology Trends",
+        "duration": "2:45"
+      }
+    },
+    "audiotitle_es": {
+      "type": "object",
+      "description": "Audio title in Spanish",
+      "example": {
+        "title": "Introducción a las Tendencias Tecnológicas",
+        "duration": "2:45"
+      }
+    },
+    "paragraph_en": {
+      "type": "object",
+      "description": "Paragraph content in English",
+      "example": {
+        "content": "This paragraph explains the trends in technology and their potential impact on society."
+      }
+    },
+    "paragraph_es": {
+      "type": "object",
+      "description": "Paragraph content in Spanish",
+      "example": {
+        "content": "Este párrafo explica las tendencias tecnológicas y su posible impacto en la sociedad."
+      }
+    },
+    "videodescription_en": {
+      "type": "string",
+      "description": "Description of the video in English",
+      "example": "This video explains the latest advancements in artificial intelligence."
+    },
+    "videodescription_es": {
+      "type": "string",
+      "description": "Description of the video in Spanish",
+      "example": "Este video explica los últimos avances en inteligencia artificial."
+    },
+    "gallery": {
+      "type": "object",
+      "description": "Gallery content associated with the article",
+      "example": {
+        "images": [
+          "https://example.com/gallery1.jpg",
+          "https://example.com/gallery2.jpg",
+          "https://example.com/gallery3.jpg"
+        ],
+        "captions": [
+          "Image 1 description",
+          "Image 2 description",
+          "Image 3 description"
+        ]
+      }
+    },
+    "iframe": {
+      "type": "object",
+      "description": "Embedded iframe content associated with the article",
+      "example": {
+        "src": "https://example.com/embed",
+        "title": "Interactive Map",
+        "width": "600",
+        "height": "400"
+      }
+    },
+    "audioUrl": {
+      "type": "string",
+      "description": "URL of the audio file associated with the article",
+      "example": "https://example.com/audio-file.mp3"
+    },
+    "videoUrl": {
+      "type": "string",
+      "description": "URL of the video file associated with the article",
+      "example": "https://example.com/video-file.mp4"
+    },
+    "videoAlt_en": {
+      "type": "string",
+      "description": "Alternative text for the video in English",
+      "example": "A video demonstrating the latest AI trends."
+    },
+    "videoAlt_es": {
+      "type": "string",
+      "description": "Alternative text for the video in Spanish",
+      "example": "Un video que muestra las últimas tendencias en IA."
+    }
+  },
+  "required": [
+    "videoAlt_en",
+    "videoAlt_es",
+    "video_url",
+    "audio_url",
+    "iframe",
+    "gallery",
+    "videodescription_en",
+    "videodescription_es",
+    "paragraph_en",
+    "paragraph_es",
+    "audiotitle_en",
+    "audiotitle_es",
+    "subtitle_es",
+    "subtitle_en",
+    "title1_en",
+    "title1_es",
+    "title2_en",
+    "title2_es",
+    "category",
+    "date",
+    "shortdescription_en",
+    "shortdescription_es",
+    "bannerUrl",
+    "bannerAlt_en",
+    "bannerAlt_es",
+    "bannerdescription_en",
+    "bannerdescription_es",
+    "titledescription_en",
+    "titledescription_es",
+    "articlesocialmedia",
+    "media",
+    "authorId"
+  ]
+}

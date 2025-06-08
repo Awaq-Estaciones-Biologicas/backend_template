@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["Hotel", "Casa Familiar", "Camping"],
+      "description": "Type of stay",
+      "example": "Hotel"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Name of the stay in English",
+      "example": "Luxury Hotel"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Name of the stay in Spanish",
+      "example": "Hotel de Lujo"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description of the stay in English",
+      "example": "A luxurious hotel with all modern amenities.",
+      "nullable": true
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description of the stay in Spanish",
+      "example": "Un hotel de lujo con todas las comodidades modernas.",
+      "nullable": true
+    },
+    "internship_id": {
+      "type": "integer",
+      "description": "ID of the internship associated with the stay",
+      "example": 7
+    },
+    "country_id": {
+      "type": "integer",
+      "description": "ID of the country where the stay is located",
+      "example": 5
+    },
+    "instructor_id": {
+      "type": "integer",
+      "description": "ID of the instructor associated with the stay",
+      "example": 3
+    },
+    "location_id": {
+      "type": "integer",
+      "description": "ID of the location associated with the stay",
+      "example": 10
+    }
+  },
+  "required": [
+    "type",
+    "name_en",
+    "name_es",
+    "internship_id",
+    "country_id",
+    "instructor_id",
+    "location_id"
+  ]
+}

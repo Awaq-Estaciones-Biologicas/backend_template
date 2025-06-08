@@ -1,0 +1,111 @@
+{
+  "type": "object",
+  "properties": {
+    "bookingData": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Start date of the booking",
+          "example": "2024-12-01"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "End date of the booking",
+          "example": "2024-12-05"
+        },
+        "rooms_reserved": {
+          "type": "integer",
+          "description": "Number of rooms reserved for the booking",
+          "example": 2,
+          "minimum": 1
+        },
+        "status": {
+          "type": "boolean",
+          "description": "Booking status (true for active, false for inactive)",
+          "example": true
+        },
+        "duration": {
+          "type": "integer",
+          "description": "Duration of the stay in weeks (restricted to 2 or 4)",
+          "example": 4,
+          "enum": [2, 4]
+        },
+        "total_price": {
+          "type": "number",
+          "format": "decimal",
+          "description": "Total price of the booking",
+          "example": 350.75
+        },
+        "payment_status": {
+          "type": "string",
+          "description": "Payment status of the booking (e.g., 'paid', 'pending')",
+          "example": "paid"
+        },
+        "payment_reference": {
+          "type": "string",
+          "description": "Reference ID for the payment transaction",
+          "example": "PAY12345XYZ"
+        },
+        "pdf_itinerary": {
+          "type": "string",
+          "description": "URL of the PDF itinerary",
+          "example": "https://example.com/itinerary.pdf"
+        },
+        "stay_id": {
+          "type": "integer",
+          "description": "ID of the stay associated with the booking",
+          "example": 101
+        },
+        "user_id": {
+          "type": "integer",
+          "description": "ID of the user who made the booking",
+          "example": 5
+        },
+        "internship_id": {
+          "type": "integer",
+          "description": "ID of the internship associated with the booking",
+          "example": 42
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date",
+        "rooms_reserved",
+        "status",
+        "duration",
+        "total_price",
+        "payment_status",
+        "payment_reference",
+        "pdf_itinerary",
+        "stay_id",
+        "user_id",
+        "internship_id"
+      ]
+    },
+    "roomsData": {
+      "type": "array",
+      "description": "Array of rooms associated with the booking",
+      "items": {
+        "type": "object",
+        "properties": {
+          "room_id": {
+            "type": "integer",
+            "description": "ID of the room being reserved",
+            "example": 201
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Number of rooms reserved of this type",
+            "example": 2,
+            "minimum": 1
+          }
+        },
+        "required": ["room_id", "quantity"]
+      }
+    }
+  },
+  "required": ["bookingData", "roomsData"]
+}

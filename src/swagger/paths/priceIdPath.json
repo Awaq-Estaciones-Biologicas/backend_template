@@ -1,0 +1,103 @@
+{
+  "get": {
+    "tags": ["Prices"],
+    "summary": "Get price by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the price to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Price retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/priceSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Price not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Prices"],
+    "summary": "Update price by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the price to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/priceSchema.json"
+          },
+          "example": {
+            "id": 1,
+            "price": 150.0,
+            "currency": "USD"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Price updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/priceSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Price not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Prices"],
+    "summary": "Delete price by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the price to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Price deleted successfully"
+      },
+      "404": {
+        "description": "Price not found"
+      }
+    }
+  }
+}

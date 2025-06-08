@@ -1,0 +1,178 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User API",
+    "description": "API for managing users with JWT Authentication",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "User": {
+        "$ref": "./paths/components/schemas/userSchema.json"
+      },
+      "Article": {
+        "$ref": "./paths/components/schemas/articleSchema.json"
+      },
+      "Booking": {
+        "$ref": "./paths/components/schemas/bookingSchema.json"
+      },
+      "Comment": {
+        "$ref": "./paths/components/schemas/commentSchema.json"
+      },
+      "Country": {
+        "$ref": "./paths/components/schemas/countrySchema.json"
+      },
+      "Director": {
+        "$ref": "./paths/components/schemas/directorSchema.json"
+      },
+      "Instructor": {
+        "$ref": "./paths/components/schemas/instructorSchema.json"
+      },
+      "Location": {
+        "$ref": "./paths/components/schemas/locationSchema.json"
+      },
+      "Price": {
+        "$ref": "./paths/components/schemas/priceSchema.json"
+      },
+      "Publication": {
+        "$ref": "./paths/components/schemas/publicationSchema.json"
+      },
+      "Room": {
+        "$ref": "./paths/components/schemas/roomSchema.json"
+      },
+      "Station": {
+        "$ref": "./paths/components/schemas/stationSchema.json"
+      },
+      "Stay": {
+        "$ref": "./paths/components/schemas/staySchema.json"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/users/admin": {
+      "$ref": "./paths/useradminPath.json"
+    },
+    "/users": {
+      "$ref": "./paths/userPath.json"
+    },
+    "/users/{id}": {
+      "$ref": "./paths/userIdPath.json"
+    },
+    "/auth/login": {
+      "$ref": "./paths/authPath.json"
+    },
+    "/articles": {
+      "$ref": "./paths/articlePath.json"
+    },
+    "/articles/{id}": {
+      "$ref": "./paths/articleIdPath.json"
+    },
+    "/bookings": {
+      "$ref": "./paths/bookingPath.json"
+    },
+    "/bookings/{id}": {
+      "$ref": "./paths/bookingIdPath.json"
+    },
+    "/bookings/confirmation": {
+      "$ref": "./paths/bookingconfirmationPath.json"
+    },
+    "/bookings/available": {
+      "$ref": "./paths/bookingavailablePath.json"
+    },
+    "/comments": {
+      "$ref": "./paths/commentPath.json"
+    },
+    "/comments/{id}": {
+      "$ref": "./paths/commentIdPath.json"
+    },
+    "/countries": {
+      "$ref": "./paths/countryPath.json"
+    },
+    "/countries/{id}": {
+      "$ref": "./paths/countryIdPath.json"
+    },
+    "/directors": {
+      "$ref": "./paths/directorPath.json"
+    },
+    "/directors/{id}": {
+      "$ref": "./paths/directorIdPath.json"
+    },
+    "/instructors": {
+      "$ref": "./paths/instructorPath.json"
+    },
+    "/instructors/{id}": {
+      "$ref": "./paths/instructorIdPath.json"
+    },
+    "/internships": {
+      "$ref": "./paths/internshipPath.json"
+    },
+    "/internships/{id}": {
+      "$ref": "./paths/internshipIdPath.json"
+    },
+    "/locations": {
+      "$ref": "./paths/locationPath.json"
+    },
+    "/locations/{id}": {
+      "$ref": "./paths/locationIdPath.json"
+    },
+    "/prices": {
+      "$ref": "./paths/pricePath.json"
+    },
+    "/prices/{id}": {
+      "$ref": "./paths/priceIdPath.json"
+    },
+    "/publications": {
+      "$ref": "./paths/publicationPath.json"
+    },
+    "/publications/{id}": {
+      "$ref": "./paths/publicationIdPath.json"
+    },
+    "/rooms": {
+      "$ref": "./paths/roomPath.json"
+    },
+    "/rooms/{id}": {
+      "$ref": "./paths/roomIdPath.json"
+    },
+    "/rooms/available-room": {
+      "$ref": "./paths/roomAvailableRoomPath.json"
+    },
+    "/rooms/book-room": {
+      "$ref": "./paths/roomBookRoomPath.json"
+    },
+    "/stations": {
+      "$ref": "./paths/stationPath.json"
+    },
+    "/stations/{id}": {
+      "$ref": "./paths/stationIdPath.json"
+    },
+    "/stays": {
+      "$ref": "./paths/stayPath.json"
+    },
+    "/stays/{id}": {
+      "$ref": "./paths/stayIdPath.json"
+    },
+    "/payments/create-order": {
+      "$ref": "./paths/paymentCreateOrderPath.json"
+    },
+    "/payments/capture-payment": {
+      "$ref": "./paths/paymentCapturePaymentPath.json"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "name_en": {
+      "type": "string",
+      "description": "Instructor's name in English",
+      "example": "John Smith"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Instructor's name in Spanish",
+      "example": "Juan Pérez"
+    },
+    "subtitle_en": {
+      "type": "string",
+      "description": "Subtitle for the instructor in English",
+      "example": "Expert in Data Science"
+    },
+    "subtitle_es": {
+      "type": "string",
+      "description": "Subtitle for the instructor in Spanish",
+      "example": "Experto en Ciencia de Datos"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Brief description of the instructor in English",
+      "example": "John has over 10 years of experience in data science and AI."
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Brief description of the instructor in Spanish",
+      "example": "Juan tiene más de 10 años de experiencia en ciencia de datos e IA."
+    },
+    "video_es": {
+      "type": "string",
+      "description": "URL to the instructor's introduction video in Spanish",
+      "example": "https://example.com/videos/instructor-es.mp4",
+      "nullable": true
+    },
+    "video_en": {
+      "type": "string",
+      "description": "URL to the instructor's introduction video in English",
+      "example": "https://example.com/videos/instructor-en.mp4",
+      "nullable": true
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Instructor's email address",
+      "example": "john.smith@example.com"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Instructor's phone number",
+      "example": "+123456789"
+    },
+    "linkedin": {
+      "type": "string",
+      "description": "URL to the instructor's LinkedIn profile",
+      "example": "https://linkedin.com/in/johnsmith",
+      "nullable": true
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL to the instructor's profile image",
+      "example": "https://example.com/images/instructor.jpg",
+      "nullable": true
+    },
+    "station_id": {
+      "type": "integer",
+      "description": "ID of the station associated with the instructor",
+      "example": 7
+    }
+  },
+  "required": [
+    "name_en",
+    "name_es",
+    "subtitle_en",
+    "subtitle_es",
+    "description_en",
+    "description_es",
+    "email",
+    "phone",
+    "station_id"
+  ]
+}

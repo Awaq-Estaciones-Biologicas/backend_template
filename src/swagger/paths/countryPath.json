@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Countries"],
+    "summary": "Create a new country",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/countrySchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Country created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/countrySchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Countries"],
+    "summary": "Get all countries",
+    "responses": {
+      "200": {
+        "description": "List of countries",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/countrySchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

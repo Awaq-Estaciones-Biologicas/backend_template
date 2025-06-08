@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Stations"],
+    "summary": "Create a new station",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/stationSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Station created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/stationSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Stations"],
+    "summary": "Get all stations",
+    "responses": {
+      "200": {
+        "description": "List of stations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/stationSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

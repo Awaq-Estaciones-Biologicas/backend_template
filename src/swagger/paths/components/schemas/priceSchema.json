@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "price": {
+      "type": "number",
+      "format": "decimal",
+      "description": "Price of the room for a specified number of weeks",
+      "example": 1200.0
+    },
+    "currency": {
+      "type": "string",
+      "enum": ["USD"],
+      "description": "Currency of the price",
+      "example": "USD"
+    },
+    "number_weeks": {
+      "type": "integer",
+      "enum": [2, 4],
+      "description": "Number of weeks the price covers",
+      "example": 4
+    }
+  },
+  "required": ["price", "currency", "number_weeks"]
+}

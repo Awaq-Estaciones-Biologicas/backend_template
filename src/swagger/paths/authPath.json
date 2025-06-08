@@ -1,0 +1,42 @@
+{
+  "post": {
+    "tags": ["Authentication"],
+    "summary": "Obtain JWT Token",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": { "type": "string" },
+              "password": { "type": "string" }
+            },
+            "example": {
+              "email": "john.doe@example.com",
+              "password": "hashed_password_example"
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Token successfully generated",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Invalid credentials"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "get": {
+    "tags": ["Countries"],
+    "summary": "Get country by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the country to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Country retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/countrySchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Country not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Countries"],
+    "summary": "Update country by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the country to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/countrySchema.json"
+          },
+          "example": {
+            "image_url": "https://example.com/image.jpg"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Country updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/countrySchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Country not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Countries"],
+    "summary": "Delete country by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the country to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Country deleted successfully"
+      },
+      "404": {
+        "description": "Country not found"
+      }
+    }
+  }
+}

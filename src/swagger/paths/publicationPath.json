@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Publications"],
+    "summary": "Create a new publication",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/publicationSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Publication created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/publicationSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Publications"],
+    "summary": "Get all publications",
+    "responses": {
+      "200": {
+        "description": "List of publications",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/publicationSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

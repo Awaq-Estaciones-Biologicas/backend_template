@@ -1,0 +1,102 @@
+{
+  "get": {
+    "tags": ["Publications"],
+    "summary": "Get publication by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the publication to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Publication retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/publicationSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Publication not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Publications"],
+    "summary": "Update publication by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the publication to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/publicationSchema.json"
+          },
+          "example": {
+            "image_url": "https://example.com/new-image.jpg",
+            "author_id": 5
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Publication updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/publicationSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Publication not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Publications"],
+    "summary": "Delete publication by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the publication to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Publication deleted successfully"
+      },
+      "404": {
+        "description": "Publication not found"
+      }
+    }
+  }
+}

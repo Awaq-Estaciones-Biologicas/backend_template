@@ -1,0 +1,103 @@
+{
+  "get": {
+    "tags": ["Locations"],
+    "summary": "Get location by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the location to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Location retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/locationSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Location not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Locations"],
+    "summary": "Update location by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the location to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/locationSchema.json"
+          },
+          "example": {
+            "city": "Updated City",
+            "gps": "12.3456, -78.9012",
+            "address": "Updated Address, Example Country"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Location updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/locationSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Location not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Locations"],
+    "summary": "Delete location by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the location to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Location deleted successfully"
+      },
+      "404": {
+        "description": "Location not found"
+      }
+    }
+  }
+}

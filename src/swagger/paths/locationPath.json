@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Locations"],
+    "summary": "Create a new location",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/locationSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Location created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/locationSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Locations"],
+    "summary": "Get all locations",
+    "responses": {
+      "200": {
+        "description": "List of locations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/locationSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

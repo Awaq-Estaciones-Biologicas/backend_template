@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Stays"],
+    "summary": "Create a new stay",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/staySchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Stay created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/staySchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Stays"],
+    "summary": "Get all stays",
+    "responses": {
+      "200": {
+        "description": "List of stays",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/staySchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

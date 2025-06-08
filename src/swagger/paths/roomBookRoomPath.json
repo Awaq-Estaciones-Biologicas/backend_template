@@ -1,0 +1,51 @@
+{
+  "get": {
+    "tags": ["Rooms"],
+    "summary": "Book a room",
+    "parameters": [
+      {
+        "name": "roomId",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the room to book"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Room booked successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "room": {
+                  "type": "object",
+                  "properties": {
+                    "roomId": {
+                      "type": "integer"
+                    },
+                    "roomName": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Room not available or already booked"
+      },
+      "500": {
+        "description": "Failed to book room"
+      }
+    }
+  }
+}

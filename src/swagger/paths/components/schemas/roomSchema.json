@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "properties": {
+    "name_es": {
+      "type": "string",
+      "description": "Name of the room in Spanish",
+      "example": "Habitación Doble"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Name of the room in English",
+      "example": "Double Room"
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description of the room in Spanish",
+      "example": "Una cómoda habitación con dos camas individuales."
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description of the room in English",
+      "example": "A comfortable room with two single beds."
+    },
+    "nRooms": {
+      "type": "integer",
+      "description": "Total number of rooms available",
+      "example": 10
+    },
+    "nRoomsAvailable": {
+      "type": "integer",
+      "description": "Number of rooms currently available",
+      "example": 5
+    },
+    "type_bed": {
+      "type": "string",
+      "enum": ["single", "double"],
+      "description": "Type of bed in the room",
+      "example": "double"
+    },
+    "type_room": {
+      "type": "string",
+      "enum": ["individual", "shared"],
+      "description": "Type of room (individual or shared)",
+      "example": "shared"
+    },
+    "stars": {
+      "type": "integer",
+      "description": "Star rating of the room",
+      "example": 4,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "breakfast": {
+      "type": "boolean",
+      "description": "Indicates if breakfast is included",
+      "example": true
+    },
+    "private_bathroom": {
+      "type": "boolean",
+      "description": "Indicates if the room has a private bathroom",
+      "example": true
+    },
+    "wifi": {
+      "type": "boolean",
+      "description": "Indicates if WiFi is available",
+      "example": true
+    },
+    "air_conditioning": {
+      "type": "boolean",
+      "description": "Indicates if air conditioning is available",
+      "example": true
+    },
+    "tv": {
+      "type": "boolean",
+      "description": "Indicates if a TV is available in the room",
+      "example": false
+    },
+    "stay_id": {
+      "type": "integer",
+      "description": "ID of the stay associated with the room",
+      "example": 3
+    },
+    "price_id": {
+      "type": "integer",
+      "description": "ID of the price associated with the room",
+      "example": 5
+    }
+  },
+  "required": [
+    "name_es",
+    "name_en",
+    "description_es",
+    "description_en",
+    "image_url",
+    "nRooms",
+    "nRoomsAvailable",
+    "type_bed",
+    "type_room",
+    "stars",
+    "breakfast",
+    "private_bathroom",
+    "wifi",
+    "air_conditioning",
+    "tv",
+    "stay_id",
+    "price_id"
+  ]
+}

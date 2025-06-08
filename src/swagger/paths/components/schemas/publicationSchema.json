@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "image_url": {
+      "type": "string",
+      "description": "URL of the publication's image",
+      "example": "https://example.com/images/publication.jpg",
+      "nullable": true
+    },
+    "author_id": {
+      "type": "integer",
+      "description": "ID of the user who authored the publication",
+      "example": 42
+    }
+  },
+  "required": ["author_id"]
+}

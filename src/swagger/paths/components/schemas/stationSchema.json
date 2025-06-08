@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "state": {
+      "type": "boolean",
+      "description": "State of the station (active or inactive)",
+      "example": true
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Name of the station in English",
+      "example": "Research Station"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Name of the station in Spanish",
+      "example": "Estación de Investigación"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description of the station in English",
+      "example": "This station focuses on biodiversity research."
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description of the station in Spanish",
+      "example": "Esta estación se centra en la investigación de biodiversidad."
+    },
+    "subtitle_en": {
+      "type": "string",
+      "description": "Subtitle for the station in English",
+      "example": "Center for Tropical Studies",
+      "nullable": true
+    },
+    "subtitle_es": {
+      "type": "string",
+      "description": "Subtitle for the station in Spanish",
+      "example": "Centro de Estudios Tropicales",
+      "nullable": true
+    },
+    "video_es": {
+      "type": "string",
+      "description": "URL to the station's video in Spanish",
+      "example": "https://example.com/videos/station-es.mp4",
+      "nullable": true
+    },
+    "video_en": {
+      "type": "string",
+      "description": "URL to the station's video in English",
+      "example": "https://example.com/videos/station-en.mp4",
+      "nullable": true
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL to the station's representative image",
+      "example": "https://example.com/images/station.jpg"
+    },
+    "country_id": {
+      "type": "integer",
+      "description": "ID of the country where the station is located",
+      "example": 1
+    },
+    "location_id": {
+      "type": "integer",
+      "description": "ID of the location associated with the station",
+      "example": 10
+    },
+    "director_id": {
+      "type": "integer",
+      "description": "ID of the director in charge of the station",
+      "example": 5
+    }
+  },
+  "required": [
+    "state",
+    "name_en",
+    "name_es",
+    "description_en",
+    "description_es",
+    "image_url",
+    "country_id",
+    "location_id",
+    "director_id"
+  ]
+}

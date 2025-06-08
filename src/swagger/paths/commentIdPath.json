@@ -1,0 +1,102 @@
+{
+  "get": {
+    "tags": ["Comments"],
+    "summary": "Get comment by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the comment to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Comment retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/commentSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Comment not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Comments"],
+    "summary": "Update comment by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the comment to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/commentSchema.json"
+          },
+          "example": {
+            "description": "Updated comment content",
+            "state": true
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Comment updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/commentSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Comment not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Comments"],
+    "summary": "Delete comment by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the comment to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Comment deleted successfully"
+      },
+      "404": {
+        "description": "Comment not found"
+      }
+    }
+  }
+}

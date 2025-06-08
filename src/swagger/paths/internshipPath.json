@@ -1,0 +1,45 @@
+{
+  "post": {
+    "tags": ["Internships"],
+    "summary": "Create a new internship",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/internshipSchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Internship created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/internshipSchema.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "get": {
+    "tags": ["Internships"],
+    "summary": "Get all internships",
+    "responses": {
+      "200": {
+        "description": "List of internships",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "./components/schemas/internshipSchema.json" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

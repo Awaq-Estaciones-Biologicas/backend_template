@@ -1,0 +1,40 @@
+{
+  "get": {
+    "tags": ["Bookings"],
+    "summary": "Send booking confirmation",
+    "parameters": [
+      {
+        "name": "bookingId",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the booking for confirmation"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Confirmation sent successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Booking not found"
+      },
+      "500": {
+        "description": "Failed to send confirmation"
+      }
+    }
+  }
+}

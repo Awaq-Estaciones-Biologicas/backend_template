@@ -1,0 +1,65 @@
+{
+  "get": {
+    "tags": ["Bookings"],
+    "summary": "Get available dates for bookings",
+    "parameters": [
+      {
+        "name": "internshipId",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the internship"
+      },
+      {
+        "name": "countryId",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the country"
+      },
+      {
+        "name": "stationId",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the station"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Available dates retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Missing or invalid query parameters"
+      },
+      "404": {
+        "description": "No available dates found"
+      },
+      "500": {
+        "description": "Failed to fetch available dates"
+      }
+    }
+  }
+}

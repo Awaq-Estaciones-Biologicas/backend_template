@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "name_es": {
+      "type": "string",
+      "description": "Name of the country in Spanish",
+      "example": "Costa Rica"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Name of the country in English",
+      "example": "Costa Rica"
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description of the country in Spanish",
+      "example": "Un país conocido por su biodiversidad y ecoturismo.",
+      "nullable": true
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description of the country in English",
+      "example": "A country known for its biodiversity and ecotourism.",
+      "nullable": true
+    },
+    "subtitle_es": {
+      "type": "string",
+      "description": "Subtitle in Spanish",
+      "example": "Pura Vida",
+      "nullable": true
+    },
+    "subtitle_en": {
+      "type": "string",
+      "description": "Subtitle in English",
+      "example": "Pure Life",
+      "nullable": true
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL of the country's representative image",
+      "example": "https://example.com/images/costa-rica.jpg",
+      "nullable": true
+    }
+  },
+  "required": ["name_es", "name_en"]
+}

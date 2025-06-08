@@ -1,0 +1,98 @@
+{
+  "get": {
+    "tags": ["Stays"],
+    "summary": "Get stay by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the stay to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Stay retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/staySchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Stay not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Stays"],
+    "summary": "Update stay by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the stay to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/staySchema.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Stay updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/staySchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Stay not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Stays"],
+    "summary": "Delete stay by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the stay to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Stay deleted successfully"
+      },
+      "404": {
+        "description": "Stay not found"
+      }
+    }
+  }
+}

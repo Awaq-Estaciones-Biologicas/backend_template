@@ -1,0 +1,112 @@
+{
+  "get": {
+    "tags": ["Rooms"],
+    "summary": "Get room by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the room to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Room retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/roomSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Room not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Rooms"],
+    "summary": "Update room by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the room to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/roomSchema.json"
+          },
+          "example": {
+            "nRooms": 10,
+            "nRoomsAvailable": 5,
+            "type_bed": true,
+            "type_room": false,
+            "stars": 4,
+            "breakfast": true,
+            "private_bathroom": true,
+            "wifi": true,
+            "air_conditioning": true,
+            "tv": true,
+            "stay_id": 1,
+            "price_id": 2
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Room updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/roomSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Room not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Rooms"],
+    "summary": "Delete room by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the room to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Room deleted successfully"
+      },
+      "404": {
+        "description": "Room not found"
+      }
+    }
+  }
+}

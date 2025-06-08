@@ -1,0 +1,103 @@
+{
+  "get": {
+    "tags": ["Directors"],
+    "summary": "Obtener un director por ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID del director a obtener"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Director obtenido exitosamente",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/directorSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Director no encontrado"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Directors"],
+    "summary": "Actualizar un director por ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID del director a actualizar"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/directorSchema.json"
+          },
+          "example": {
+            "name": "Nombre Actualizado",
+            "email": "correo@ejemplo.com",
+            "phone": "+123456789"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Director actualizado exitosamente",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/directorSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Entrada inválida"
+      },
+      "404": {
+        "description": "Director no encontrado"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Directors"],
+    "summary": "Eliminar un director por ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID del director a eliminar"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Director eliminado exitosamente"
+      },
+      "404": {
+        "description": "Director no encontrado"
+      }
+    }
+  }
+}

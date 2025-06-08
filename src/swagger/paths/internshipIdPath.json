@@ -1,0 +1,102 @@
+{
+  "get": {
+    "tags": ["Internships"],
+    "summary": "Get internship by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the internship to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Internship retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/internshipSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Internship not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Internships"],
+    "summary": "Update internship by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the internship to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/internshipSchema.json"
+          },
+          "example": {
+            "title": "Updated Internship Title",
+            "description": "Updated description of the internship."
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Internship updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/internshipSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Internship not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Internships"],
+    "summary": "Delete internship by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the internship to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Internship deleted successfully"
+      },
+      "404": {
+        "description": "Internship not found"
+      }
+    }
+  }
+}

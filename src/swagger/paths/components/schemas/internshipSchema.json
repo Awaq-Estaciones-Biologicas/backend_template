@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "name_es": {
+      "type": "string",
+      "description": "Name of the internship in Spanish",
+      "example": "Pasantía en Ecología"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Name of the internship in English",
+      "example": "Ecology Internship"
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description of the internship in Spanish",
+      "example": "Una pasantía enfocada en estudios ecológicos y conservación."
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description of the internship in English",
+      "example": "An internship focused on ecological studies and conservation."
+    },
+    "subtitle_es": {
+      "type": "string",
+      "description": "Subtitle for the internship in Spanish",
+      "example": "Estudios de campo en biodiversidad"
+    },
+    "subtitle_en": {
+      "type": "string",
+      "description": "Subtitle for the internship in English",
+      "example": "Field studies in biodiversity"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL of the internship's representative image",
+      "example": "https://example.com/images/internship.jpg"
+    },
+    "state": {
+      "type": "boolean",
+      "description": "Current state of the internship (active or inactive)",
+      "example": true
+    },
+    "station_id": {
+      "type": "integer",
+      "description": "ID of the station associated with the internship",
+      "example": 3
+    },
+    "country_id": {
+      "type": "integer",
+      "description": "ID of the country where the internship is located",
+      "example": 7
+    }
+  },
+  "required": [
+    "name_es",
+    "name_en",
+    "description_es",
+    "description_en",
+    "subtitle_es",
+    "subtitle_en",
+    "image_url",
+    "state",
+    "station_id",
+    "country_id"
+  ]
+}

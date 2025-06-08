@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "description": "First name of the user",
+      "example": "John"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Last name of the user",
+      "example": "Doe"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of the user",
+      "example": "john.doe@example.com"
+    },
+    "password": {
+      "type": "string",
+      "description": "User's password (encrypted upon creation)",
+      "example": "securepassword123"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number of the user",
+      "example": "+123456789",
+      "nullable": true
+    },
+    "role": {
+      "type": "string",
+      "enum": ["client", "admin", "superAdmin"],
+      "description": "Role assigned to the user",
+      "example": "client"
+    },
+    "state": {
+      "type": "string",
+      "description": "State of the user's account (active, inactive, etc.)",
+      "example": "active",
+      "nullable": true
+    },
+    "profile_img": {
+      "type": "string",
+      "description": "URL of the user's profile image",
+      "example": "https://example.com/images/profile.jpg",
+      "nullable": true
+    },
+    "country": {
+      "type": "string",
+      "description": "Country of the user",
+      "example": "United States",
+      "nullable": true
+    },
+    "city": {
+      "type": "string",
+      "description": "City of the user",
+      "example": "New York",
+      "nullable": true
+    },
+    "zip": {
+      "type": "string",
+      "description": "ZIP code of the user",
+      "example": "10001",
+      "nullable": true
+    },
+    "emergency_contact": {
+      "type": "string",
+      "description": "Name of the user's emergency contact",
+      "example": "Jane Doe",
+      "nullable": true
+    },
+    "emergency_phone": {
+      "type": "string",
+      "description": "Phone number of the user's emergency contact",
+      "example": "+987654321",
+      "nullable": true
+    }
+  },
+  "required": ["first_name", "last_name", "email", "password", "role"]
+}

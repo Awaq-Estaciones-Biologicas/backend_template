@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "description_es": {
+      "type": "string",
+      "description": "Comment description in Spanish",
+      "example": "Este es un comentario en español."
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Comment description in English",
+      "example": "This is a comment in English."
+    },
+    "state": {
+      "type": "boolean",
+      "description": "State of the comment (true for active, false for inactive)",
+      "example": true
+    },
+    "publication_id": {
+      "type": "integer",
+      "description": "ID of the associated publication",
+      "example": 123
+    },
+    "user_id": {
+      "type": "integer",
+      "description": "ID of the user who made the comment",
+      "example": 45
+    }
+  },
+  "required": [
+    "description_es",
+    "description_en",
+    "state",
+    "publication_id",
+    "user_id"
+  ]
+}

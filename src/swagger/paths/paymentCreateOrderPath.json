@@ -1,0 +1,63 @@
+{
+  "post": {
+    "tags": ["Payments"],
+    "summary": "Create a PayPal order",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "bookingId": {
+                "type": "integer",
+                "description": "Booking ID to create PayPal order"
+              }
+            },
+            "required": ["bookingId"]
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "PayPal order created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orderId": {
+                  "type": "string",
+                  "description": "PayPal order ID"
+                },
+                "links": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "href": {
+                        "type": "string",
+                        "description": "URL of the link"
+                      },
+                      "rel": {
+                        "type": "string",
+                        "description": "Relation type"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Missing bookingId"
+      },
+      "500": {
+        "description": "Error creating PayPal order"
+      }
+    }
+  }
+}

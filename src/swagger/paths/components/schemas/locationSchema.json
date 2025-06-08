@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "city": {
+      "type": "string",
+      "description": "Name of the city",
+      "example": "New York, NY 10024, USA"
+    },
+    "gps": {
+      "type": "string",
+      "description": "GPS coordinates of the location",
+      "example": "40.785091,-73.968285"
+    },
+    "address": {
+      "type": "string",
+      "description": "Address of the location",
+      "example": "New York, NY 10024, USA"
+    }
+  },
+  "required": ["location_name", "gps", "address"]
+}

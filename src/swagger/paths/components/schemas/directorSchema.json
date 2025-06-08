@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "director_name": {
+      "type": "string",
+      "description": "Full name of the director",
+      "example": "Jane Doe"
+    },
+    "director_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of the director",
+      "example": "jane.doe@example.com"
+    },
+    "director_phone": {
+      "type": "string",
+      "description": "Phone number of the director",
+      "example": "+123456789"
+    },
+    "video_es": {
+      "type": "string",
+      "description": "URL of the director's video in Spanish",
+      "example": "https://example.com/videos/director-es.mp4",
+      "nullable": true
+    },
+    "video_en": {
+      "type": "string",
+      "description": "URL of the director's video in English",
+      "example": "https://example.com/videos/director-en.mp4",
+      "nullable": true
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL of the director's profile image",
+      "example": "https://example.com/images/director.jpg"
+    }
+  },
+  "required": ["director_name", "director_email", "director_phone", "image_url"]
+}

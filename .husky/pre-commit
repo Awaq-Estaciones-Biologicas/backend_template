@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🏃 Running pre-commit checks..."
+
+run_command() {
+  output=$("$@" 2>&1)
+  status=$?
+  if [ $status -eq 0 ]; then
+    echo "✅ $1 successful!"
+  else
+    echo "❌ $1 failed!"
+    echo "$output"
+    return 1
+  fi
+}
+
+echo "\n📝 Running Prettier..."
+run_command npx pretty-quick --staged
+
+echo "\n🔍 Running ESLint..."
+run_command npm run lint
+
+if [ $? -eq 0 ]; then
+  echo "\n✅ All checks passed! Proceeding with commit..."
+else
+  echo "\n❌ One or more checks failed. Aborting commit."
+  exit 1 # Evita el commit si algo falla
+fi

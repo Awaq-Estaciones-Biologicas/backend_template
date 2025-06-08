@@ -1,0 +1,26 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🏃 Running pre-push checks..."
+
+run_command() {
+  output=$("$@" 2>&1)
+  status=$?
+  if [ $status -eq 0 ]; then
+    echo "✅ $1 successful!"
+  else
+    echo "❌ $1 failed!"
+    echo "$output"
+    return 1
+  fi
+}
+
+echo "\n🧪 Running Tests..."
+run_command npm run test
+
+if [ $? -eq 0 ]; then
+  echo "\n✅ All checks passed! Pushing changes...."
+else
+  echo "\n❌ One or more checks failed. Aborting push."
+  exit 1
+fi

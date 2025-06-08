@@ -1,0 +1,104 @@
+{
+  "get": {
+    "tags": ["Instructors"],
+    "summary": "Get instructor by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the instructor to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Instructor retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/instructorSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Instructor not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Instructors"],
+    "summary": "Update instructor by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the instructor to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/instructorSchema.json"
+          },
+          "example": {
+            "name": "Updated Name",
+            "email": "updatedemail@example.com",
+            "phone": "+123456789",
+            "linkedin": "https://linkedin.com/in/updated-profile"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Instructor updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/instructorSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Instructor not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Instructors"],
+    "summary": "Delete instructor by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the instructor to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Instructor deleted successfully"
+      },
+      "404": {
+        "description": "Instructor not found"
+      }
+    }
+  }
+}

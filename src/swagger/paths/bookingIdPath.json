@@ -1,0 +1,105 @@
+{
+  "get": {
+    "tags": ["Bookings"],
+    "summary": "Get booking by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the booking to retrieve"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Booking retrieved successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/bookingSchema.json"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Booking not found"
+      }
+    }
+  },
+  "put": {
+    "tags": ["Bookings"],
+    "summary": "Update booking by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the booking to update"
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "./components/schemas/bookingSchema.json"
+          },
+          "example": {
+            "start_date": "2024-12-01",
+            "end_date": "2024-12-10",
+            "rooms_reserved": 2,
+            "status": true,
+            "total_price": 500.75
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Booking updated successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "./components/schemas/bookingSchema.json"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid input"
+      },
+      "404": {
+        "description": "Booking not found"
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Bookings"],
+    "summary": "Delete booking by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "ID of the booking to delete"
+      }
+    ],
+    "responses": {
+      "204": {
+        "description": "Booking deleted successfully"
+      },
+      "404": {
+        "description": "Booking not found"
+      }
+    }
+  }
+}

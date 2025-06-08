@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "orderId": {
+      "type": "string",
+      "description": "PayPal order ID"
+    },
+    "bookingId": {
+      "type": "integer",
+      "description": "Booking ID associated with the payment"
+    },
+    "paymentStatus": {
+      "type": "string",
+      "description": "Status of the payment",
+      "enum": ["pending", "completed"]
+    }
+  },
+  "required": ["orderId", "bookingId"]
+}

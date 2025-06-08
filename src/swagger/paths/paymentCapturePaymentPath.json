@@ -1,0 +1,68 @@
+{
+  "post": {
+    "tags": ["Payments"],
+    "summary": "Capture PayPal payment",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "paymentId": {
+                "type": "string",
+                "description": "PayPal order ID"
+              },
+              "payerId": {
+                "type": "string",
+                "description": "PayPal payer ID"
+              },
+              "bookingId": {
+                "type": "integer",
+                "description": "Booking ID to capture the payment"
+              }
+            },
+            "required": ["orderId", "bookingId"]
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Payment captured successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "description": "Confirmation message"
+                },
+                "paymentDetails": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Payment capture ID"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Payment status"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Missing orderId or bookingId"
+      },
+      "500": {
+        "description": "Error capturing payment"
+      }
+    }
+  }
+}
